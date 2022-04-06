@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <!-- We need to ensure the other styles are loaded before our stylesheet utilizes them -->
+  <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans:400,400i,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+  <link rel="stylesheet" href="./assets/css/style.css" />
+  <title>Weather Dashboard</title>
+</head>
+
+<body class="flex-column min-100-vh">
+  <header class="hero">
+    <h1 class="app-title">
+      <!-- The `<i>` element is for icons. These classes come from the Font Awesome font icon library. -->
+       Weather Dashboard
+    </h1>
+    
+  </header>
+
+
+  <main class="flex-row justify-space-between">
+    <div class="col-12 col-md-4">
+
+      <div class="card">
+        <h3 class="card-header text-uppercase">Search By city</h3>
+        <form id="city-form" class="card-body">
+          <label class="form-label" for="cityname">City name</label>
+          <input name="cityname" id="cityname" type="text" autofocus="true" class="form-input" />
+          <button type="submit" class="btn">Get city</button>
+        </form>
+      </div>
+
+      <div class="card">
+        <h3 class="card-header text-uppercase">Search By City</h3>
+        <div id="city-buttons" class="card-body">
+          <!-- These data-attribute values will be used to search for repositories when a button is clicked. -->
+          <button data-city="Austin" class="btn">Austin</button>
+          <button data-city="Chicago" class="btn">Chicago</button>
+          <button data-city="New York" class="btn">New York</button>
+          <button data-city="Orlando" class="btn">Orlando</button>
+          <button data-city="San Francisco" class="btn">San Francisco</button>
+          <button data-city="Seattle" class="btn">Seattle</button>
+          <button data-city="Denver" class="btn">Denver</button>
+          <button data-city="Atlanta" class="btn">Atlanta</button>
+          
+        </div>
+      </div>
+    </div>
+
+    <div class="col-12 col-md-8">
+      <h2 class="subtitle">Showing Weather For <span id="repo-search-term"></span></h2>
+      <!-- There needs to be an empty HTML element for us to write repository data to. -->
+      <div id="repos-container" class="list-group"></div>
+      <div class="col-8">
+        <div class="row p-2">
+            <div class="card">
+                <!-- main card -->
+                <div class="card-body"></div>
+            </div>
+        </div>
+            <div class="row">
+                <h4>5-Day Forecast:</h4>
+            </div>
+        <!-- five day -->
+        <div id="weeklyForecast" class="row"></div>
+    </div>
+    </div>
+  </main>
+
+  <script src="./assets/js/homepage.js"></script>
+</body>
+
+</html>
